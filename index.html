@@ -12,6 +12,19 @@
     body {
       background-color: #f8fafc;
     }
+
+    .jobs-card {
+      transition: box-shadow 0.2s ase;
+    }
+
+    .job-card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .tab-btn.active {
+      background-color: rgb(8, 72, 234);
+      color: white
+    }
   </style>
 </head>
 
@@ -48,17 +61,40 @@
     <!-- available job -->
     <section class="space-y-4">
       <div class="flex items-center justify-between">
-        <h2 class="text-lg font-semibold"></h2>
-        <span></span>
+        <h2 class="text-lg font-semibold">Available Jobs</h2>
+        <span id="jobs-count-label" class="text-sm text-gray-500 font-semibold">0 jobs</span>
       </div>
+      <!-- tabs -->
+      <!-- Tabs -->
+      <div class="flex gap-2">
+        <button id="tab-all"
+          class="tab-btn active px-4 py-1.5 text-sm font-medium rounded border hover:bg-primary hover:text-white"
+          onclick="switchTab('all')">All</button>
+        <button id="tab-interview"
+          class="tab-btn px-4 py-1.5 text-sm font-medium rounded border text-gray-600 hover:bg-primary hover:text-white"
+          onclick="switchTab('interview')">
+          <i class="fa-solid fa-video"></i> Interview
+        </button>
+        <button id="tab-rejected"
+          class="tab-btn px-4 py-1.5 text-sm font-medium rounded border text-gray-600 hover:bg-primary hover:text-white"
+          onclick="switchTab('rejected')">
+          <i class="fa-solid fa-ban"></i> Rejected
+        </button>
+      </div>
+      <!-- jobs card container -->
+      <!-- Job Cards Container -->
+      <div id="cards-container" class="space-y-4"></div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="bg-white p-8 text-center rounded shadow hidden">
+        <div class="text-5xl mb-3"><img class="mx-auto" src="./jobs.png" alt=""></div>
+        <h3 class="text-lg font-semibold">No jobs available</h3>
+        <p class="text-sm text-gray-500">Check back soon for new job opportunities.</p>
+      </div>
+
     </section>
 
-
-
-
-
   </div>
-
   <script src="./script.js"></script>
 </body>
 
