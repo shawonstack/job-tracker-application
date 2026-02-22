@@ -11,6 +11,7 @@
   <style>
     body {
       background-color: #f8fafc;
+      font-family: 'Geist', sans-serif;
     }
 
     .jobs-card {
@@ -22,8 +23,40 @@
     }
 
     .tab-btn.active {
-      background-color: rgb(8, 72, 234);
+      background-color: hsl(224, 64%, 33%);
       color: white
+    }
+
+    .status-badge {
+      display: inline block;
+      font-size: 0.75rem;
+      padding: 2px 10px;
+      border-radius: 5px;
+    }
+
+    .badge-not-applied {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .badge-interview {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .badge-rejected {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .btn-interview.selected {
+      background-color: #16a34a;
+      color: white;
+    }
+
+    .btn-rejected.selected {
+      background-color: #dc2626;
+      color: white;
     }
   </style>
 </head>
@@ -32,7 +65,7 @@
   <div class="max-w-6xl mx-auto p-6 space-y-8">
     <!-- header -->
     <header>
-      <h1 class="text-3xl font-bold text[#033F82]">Job Application Tracker</h1>
+      <h1 class="text-3xl font-bold text-[#033F82]">Job Application Tracker</h1>
 
     </header>
     <!-- dashboard -->
