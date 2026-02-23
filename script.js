@@ -90,3 +90,43 @@ const jobs = [
     status: 'not_applied',
   },
 ];
+
+// ------- State--------
+let currentTab = 'all';
+
+// -------Helpers---------
+
+function getStatusBadgeClass(status) {
+  if (status === 'interview') return 'badge-interview';
+  if (status === 'rejected') return 'badge-rejected';
+  return 'badge-not-applied';
+}
+
+function getStatusLebel(status) {
+  if (status === 'interview') return 'INTERVIEW';
+  if (status === 'rejected') return 'REJECTED';
+  return 'NOT APPLIED';
+}
+
+// ------------Render----------
+
+function rendercards() {
+  const container = document.getElementById('cards-container');
+  const emtyState = document.getElementById('emty-state');
+
+  // filter jobs dipends or bassed on current tab
+  const filtered = jobs.filter(job => {
+    if (currentTab === 'all') return true;
+    return job.status === currentTab;
+  });
+
+  //  Update 'X jobs' lebel
+
+  const total = jobs.length;
+  const count = jobs.filter(j => j.status !== 'not_applied').length;
+
+  const displayCount = currentTab === 'all' ? count : filtered.length;
+
+  document.getElementById('jobs-count-lebel').textContent =
+    `${displayCount} of ${total} jobs`;
+}
