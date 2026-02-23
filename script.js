@@ -161,7 +161,7 @@ function renderCards() {
           </button>
         </div>
         <div class="mt-3">
-          <span class="status-badge ${getStatusBadgeClass(job.status)}">${getStatusLabel(job.status)}</span>
+          <span class="status-badge ${getStatusBadgeClass(job.status)}">${getStatusLebel(job.status)}</span>
           <p class="text-sm text-gray-600 mt-2">${job.description}</p>
         </div>
         <div class="mt-4 flex gap-3">
@@ -239,3 +239,7 @@ function switchTab(tab) {
   updateDashboard();
   renderCards();
 }
+
+//  init
+updateDashboard();
+renderCards();
