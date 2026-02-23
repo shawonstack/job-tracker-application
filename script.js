@@ -224,3 +224,18 @@ function setStatus(id, newStatus) {
 }
 
 // ------- delete releted function
+function deleteJob(id) {
+  const index = jobs.findIndex(j => j.id === id);
+  if (index === -1) return;
+  jobs.splice(index, 1);
+  updateDashboard();
+  renderCards();
+}
+
+// switch tabs
+
+function switchTab(tab) {
+  currentTab = tab;
+  updateDashboard();
+  renderCards();
+}
